@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StarGazing Navigator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>StarGazing Navigator</h1>
+    <p>Plan your night sky session, discover objects, and log observations.</p>
+    <div class="hero-controls">
+      <label>
+        Latitude
+        <input id="latitude" type="number" step="0.01" value="40.71" />
+      </label>
+      <label>
+        Longitude
+        <input id="longitude" type="number" step="0.01" value="-74.00" />
+      </label>
+      <label>
+        Date
+        <input id="observationDate" type="date" />
+      </label>
+      <button id="generatePlan">Generate Tonight's Plan</button>
+      <button id="toggleNightMode" class="secondary">Toggle Red Night Mode</button>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="card full-width">
+      <h2>Live Sky Preview</h2>
+      <p class="muted">Simulated naked-eye sky preview based on selected date and location.</p>
+      <canvas id="skyCanvas" width="1200" height="420" aria-label="Sky preview"></canvas>
+    </section>
+
+    <section class="card" id="conditionsCard">
+      <h2>Tonight's Sky Conditions</h2>
+      <div class="conditions-grid">
+        <div>
+          <span class="label">Moon Phase</span>
+          <p id="moonPhase">-</p>
+        </div>
+        <div>
+          <span class="label">Darkness Window</span>
+          <p id="darknessWindow">-</p>
+        </div>
+        <div>
+          <span class="label">Estimated Seeing</span>
+          <p id="seeing">-</p>
+        </div>
+        <div>
+          <span class="label">Bortle Suggestion</span>
+          <p id="bortle">-</p>
+        </div>
+      </div>
+      <p id="conditionsSummary" class="muted"></p>
+    </section>
+
+    <section class="card">
+      <h2>Visible Object Explorer</h2>
+      <div class="filters">
+        <label>
+          Object Type
+          <select id="objectTypeFilter">
+            <option value="all">All</option>
+            <option value="planet">Planets</option>
+            <option value="deep-sky">Deep Sky</option>
+            <option value="star">Stars</option>
+          </select>
+        </label>
+        <label>
+          Difficulty
+          <select id="difficultyFilter">
+            <option value="all">All</option>
+            <option value="easy">Easy</option>
+            <option value="moderate">Moderate</option>
+            <option value="challenging">Challenging</option>
+          </select>
+        </label>
+      </div>
+      <ul id="objectList" class="object-list"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Observation Planner</h2>
+      <ol id="planList"></ol>
+      <h3>Add Custom Target</h3>
+      <form id="targetForm">
+        <input id="targetName" placeholder="Target name" required />
+        <input id="targetTime" type="time" required />
+        <input id="targetNotes" placeholder="Notes (eyepiece/filter)" />
+        <button type="submit">Add Target</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Telescope Setup Assistant</h2>
+      <div class="setup-grid">
+        <label>Aperture (mm)<input id="aperture" type="number" value="130" /></label>
+        <label>Focal Length (mm)<input id="focalLength" type="number" value="650" /></label>
+        <label>Eyepiece (mm)<input id="eyepiece" type="number" value="25" /></label>
+      </div>
+      <button id="calculateOptics">Calculate Optics</button>
+      <ul id="opticsOutput"></ul>
+    </section>
+
+    <section class="card full-width">
+      <h2>Observation Journal</h2>
+      <form id="journalForm" class="journal-form">
+        <input id="journalTarget" placeholder="Object observed" required />
+        <input id="journalRating" type="number" min="1" max="5" placeholder="Rating (1-5)" required />
+        <input id="journalInstrument" placeholder="Instrument" required />
+        <textarea id="journalNotes" placeholder="What did you see?" required></textarea>
+        <button type="submit">Save Observation</button>
+      </form>
+      <div id="journalEntries" class="journal-entries"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Tip: Let your eyes dark adapt for 20-30 minutes before deep-sky viewing.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
