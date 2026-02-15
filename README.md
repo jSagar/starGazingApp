@@ -4,10 +4,11 @@ A comprehensive single-page star gazing web application for planning observing s
 
 ## Features
 - Tonight sky condition estimator (moon phase, darkness window, seeing guidance).
-- Seasonal visible object explorer with filters.
+- Seasonal visible object explorer with filters, now including all major observable planets.
 - Automatic observing plan generator and custom target adder.
 - Telescope optics calculator.
 - Persistent observation journal (localStorage).
+- Full solar-system planet gallery with images and quick facts.
 - Red night-mode UI toggle.
 
 ## Run

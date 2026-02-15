@@ -1,6 +1,11 @@
 const starCatalog = [
+  { name: 'Mercury', type: 'planet', bestMonths: [2, 3, 4, 9, 10, 11], difficulty: 'moderate', altitudeHint: 'Very low after sunset or before sunrise', note: 'Look near the horizon during twilight with unobstructed views.' },
+  { name: 'Venus', type: 'planet', bestMonths: [1, 2, 3, 4, 10, 11, 12], difficulty: 'easy', altitudeHint: 'Bright in the west or east twilight', note: 'Use a moon filter to reduce glare and look for phases.' },
+  { name: 'Mars', type: 'planet', bestMonths: [11, 12, 1, 2, 3], difficulty: 'moderate', altitudeHint: 'Reddish object in the eastern to southern sky', note: 'Best detail appears near opposition with steady seeing.' },
   { name: 'Jupiter', type: 'planet', bestMonths: [8, 9, 10, 11, 12], difficulty: 'easy', altitudeHint: 'High in the southeast', note: 'Great cloud bands and Galilean moons.' },
   { name: 'Saturn', type: 'planet', bestMonths: [7, 8, 9, 10], difficulty: 'easy', altitudeHint: 'South after dusk', note: 'Try 120x+ to reveal rings and Cassini division.' },
+  { name: 'Uranus', type: 'planet', bestMonths: [9, 10, 11, 12, 1], difficulty: 'challenging', altitudeHint: 'Aquarius/Aries region, use a chart', note: 'Appears as a tiny blue-green disk at higher magnification.' },
+  { name: 'Neptune', type: 'planet', bestMonths: [8, 9, 10, 11, 12], difficulty: 'challenging', altitudeHint: 'Low in Pisces/Aquarius, very dim', note: 'Star-hopping and dark skies are essential.' },
   { name: 'Andromeda Galaxy (M31)', type: 'deep-sky', bestMonths: [9, 10, 11, 12], difficulty: 'moderate', altitudeHint: 'Northeast, overhead later', note: 'Use low magnification and dark skies.' },
   { name: 'Orion Nebula (M42)', type: 'deep-sky', bestMonths: [11, 12, 1, 2, 3], difficulty: 'easy', altitudeHint: 'South around midnight in winter', note: 'A UHC filter can improve contrast.' },
   { name: 'Pleiades (M45)', type: 'star', bestMonths: [10, 11, 12, 1, 2], difficulty: 'easy', altitudeHint: 'East to southwest arc', note: 'Best viewed with binoculars or a wide eyepiece.' },
